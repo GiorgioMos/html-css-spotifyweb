@@ -1,0 +1,416 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* fai container con flex e sistema i le varie sezioni con keyframes*/
+.column-spotify {
+    width: 270px;
+    height: calc(100vh - 90px);
+    background-color: #000000;
+    position: fixed;
+    overflow-y: auto;
+}
+/* rimuovi float quando fai layout con flex */
+.albums-cont {
+    width: calc(100vw - 270px);
+    height: calc(100vh - 90px);
+    background-color: #141922;
+    float: right;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+footer {
+    width: 100%;
+    height: 90px;
+    top: calc(100vh - 90px);
+    left: 0;
+    position: fixed;
+}
+
+/* SPOTIFY COLUMN */
+.logo {
+    width: 180px;
+    height: 75px;
+    margin-top: 10px;
+    margin-left: 20px;
+    position: relative;
+    margin-bottom: 20px;
+}
+.logo img {
+    width: 100%;
+}
+.logo img:last-child {
+    width: 150px;
+    height: 55px;
+    padding-right: 80px;
+    position: absolute;
+    left: 0;
+    display: none;
+}
+.column-spotify{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    height: calc(100% - 90px);
+    overflow-y: auto;
+}
+.nav-head{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 20px;
+}
+.nav-item{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    gap: 5px;
+}
+.icon{
+    width: 30px;
+}
+.playlists{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 240px;
+    margin-left: 20px;
+}
+.playlists > h3, .playlists > div{
+    margin-bottom: 15px;
+}
+#plus{
+    background-color: grey;
+    padding: 4px 6px;
+    color: black;
+}
+.nav-footer{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.ft-box{
+    width: 100%;
+}
+.nav-footer > hr{
+    margin-right: 20px;
+}
+.nav-footer > div > div{
+    margin-top: 16px;
+}
+.pfp-pic{
+    width: 40px;
+    clip-path: circle();
+    background-color: grey;
+}
+.ft-box > span > b{
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+/* GHOST BAR */
+.ghost-bar {
+    width: calc(100vw - 270px);
+    height: 80px;
+    background-color: black;
+    opacity: 0.5;
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.ghost-bar .upgrade {
+    width: 250px;
+    height: 40px;
+    padding: 10px 30px;
+    margin-right: 40px;
+    border: 1px solid white;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+}
+
+/* NAV ALBUMS */
+#nav-albums {
+    width: calc(100vw - 270px);
+    height: 70px;
+    margin-bottom: 80px;
+    background-color: #141922;
+}
+#nav-albums ul {
+    height: 70px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#nav-albums ul li {
+    padding: 10px;
+    height: 70px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: lightgrey;
+    position: relative;
+}
+
+/* ALBUMS' CONT ATTRIBUTES */
+.margin-albums-cont {
+    margin-top: 80px; 
+}
+h1 {
+    margin-left: 37px;
+    color: white;
+}
+h1:nth-of-type(2),
+h1:nth-of-type(3) {
+    margin-top: 50px;
+}
+h3 {
+    margin-top: 10px;
+    color: white;
+}
+p {
+    margin-top: 5px;
+    color: lightgrey;
+}
+.paragraph {
+    margin-top: 10px;
+    margin-left: 37px;
+    color: lightgrey;
+}
+.flex-albums-cont {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.flex-albums-cont.second {
+    margin-top: 20px;
+    margin-left: 37px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.flex-albums-cont.second .album-wrap:last-child {
+    margin-left: 75px;
+}
+.flex-albums-cont.third {
+    margin-top: 20px;
+    margin-left: 37px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.flex-albums-cont.third .album-wrap:last-child {
+    margin-left: 75px;
+}
+.flex-albums-cont .album-wrap .album {
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+}
+/* overlay */
+.circle{
+    clip-path: circle();
+}
+.flex-albums-cont .album-wrap .album .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.5;
+    display: none;
+}
+.flex-albums-cont .album-wrap .album .overlay i {
+    font-size: 80px;
+    color: white;
+    position: relative;
+    top: 100px;
+    left: 100px;
+    transform: translate(-50%, -50%);
+}
+.flex-albums-cont .album-wrap .album:hover .overlay {
+    display: block;
+    cursor: pointer;
+}
+
+.flex-albums-cont .album-wrap .album img {
+    width: 100%;
+}
+.flex-albums-cont .album-wrap .album-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* ALBUMS' CONT ATTRIBUTES */
+/* FOOTER */
+/* COMMON */
+footer {
+    min-width: 909px;
+}
+footer .row {
+    display: flex;
+}
+footer .row .footer-item {
+    width: 23%;
+    height: 90px;
+    background-color: #282828;
+}
+footer .row .footer-item-center {
+    width: 54%;
+    height: 90px;
+    background-color: #282828;
+}
+/* / COMMON */
+/* footer item left */
+.row .footer-item.left {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.row .footer-item.left .album-info {
+    display: flex;
+    align-items: center;
+    margin-left: -20px;
+}
+.row .footer-item.left .album-info span {
+    margin-left: 20px;
+}
+.row .footer-item.left .album-info span p:first-child {
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+}
+.row .footer-item.left .album-info span p:last-child {
+    font-weight: 900;
+    color: lightgray;
+}
+.row .footer-item.left .heart-folder-cont i:first-child {
+    margin-right: 10px;
+    font-size: 20px;
+    color: lightgray;
+}
+.row .footer-item.left .heart-folder-cont .fa-heart:hover,
+.row .footer-item.left .heart-folder-cont .fa-folder:hover {
+    font-size: 21px;
+    color: white;
+    cursor: pointer;
+}
+.row .footer-item.left .heart-folder-cont i:last-child {
+    margin-right: 100px;
+    font-size: 20px;
+    color: lightgray;
+}
+.row .footer-item.left .sinister-img-cont {
+    width: 70px;
+}
+.row .footer-item.left .sinister-img-cont img {
+    width: 100%;
+}
+/* / footer item left */
+
+/* footer item right */
+.row .footer-item.right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.row .footer-item.right .align-tv-cont i {
+    color: lightgrey;
+    font-size: 20px;
+}
+.row .footer-item.right .align-tv-cont i:hover {
+    font-size: 21px;
+    color: white;
+    cursor: pointer;
+}
+.row .footer-item.right .align-tv-cont i:last-child {
+    padding: 20px;
+}
+.row .footer-item.right .audio-bar {
+    display: flex;
+    align-items: center;
+}
+.row .footer-item.right .audio-bar i:hover {
+    font-size: 21px;
+    color: white;
+    cursor: pointer;
+}
+.row .footer-item.right .audio-bar i,
+.row .footer-item.right .audio-bar .slide-bar {
+    color: lightgrey;
+}
+.row .footer-item.right .audio-bar .slide-bar {
+    width: 150px;
+    height: 5px;
+    margin-right: 15px;
+    background-color: grey;
+    border-radius: 10px;
+}
+.row .footer-item.right .audio-bar i {
+    margin: 10px;
+    font-size: 20px;
+    padding-right: 10px;
+}
+/* / footer item right */
+
+/* footer item center */
+.row .footer-item-center .buttons-cont {
+    width: 30%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.row .footer-item-center .buttons-cont i {
+    font-size: 25px;
+    color: white;
+}
+.row .footer-item-center .buttons-cont i:hover {
+    font-weight: 900;
+    color: white;
+    cursor: pointer;
+}
+.row .footer-item-center .buttons-cont i:first-child:hover,
+.row .footer-item-center .buttons-cont i:last-child:hover {
+    font-size: 28px;
+}
+.row .footer-item-center .buttons-cont i:nth-child(3) {
+    font-size: 35px;
+}
+.row .footer-item-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.row .footer-item-center .slider-cont {
+    display: flex;
+    align-items: center;
+}
+.row .footer-item-center .slider-cont div:first-child,
+.row .footer-item-center .slider-cont div:last-child {
+    color: white;
+}
+.row .footer-item-center .slide-bar {
+    width: 700px;
+    height: 5px;
+    margin: 0 50px 0 50px;
+    background-color: grey;
+    border-radius: 10px;
+}
+/* / footer item center */
+/* / FOOTER */
