@@ -414,3 +414,100 @@ footer .row .footer-item-center {
 }
 /* / footer item center */
 /* / FOOTER */
+
+
+/* responsive config */
+
+@media screen and (max-width: 768px){
+    .flex-albums-cont.second .album-wrap:last-child {
+        margin-left: 20px;
+    }
+    .flex-albums-cont.third .album-wrap:last-child {
+        margin-left: 20px;
+    }
+    .flex-albums-cont.second{
+        margin-left: 0px;
+        justify-content: center;
+    }
+    .flex-albums-cont.third{
+        margin-left: 0px;
+        justify-content: center;
+    }
+    .ghost-bar .upgrade{
+        margin-right: 20px;
+    }
+    #nav-albums ul{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .row{
+        width: 768px;
+    }
+    .heart-folder-cont{
+        width: 25px;
+    }
+    .row .footer-item-center .slide-bar{
+        width: 280px;
+        margin: 0px 10px 0px 10px;
+    }
+    .align-tv-cont{
+        display: flex;
+        align-items: center;
+    }
+    #tvi{
+        padding: 5px;
+    }
+    .row .footer-item.right .audio-bar i{
+        padding-right: 0px;
+    }
+    .row .footer-item.right .audio-bar .slide-bar{
+        width: 70px;
+    }
+    footer .row .footer-item-center{
+        width: 46%;
+    }
+    footer .row .footer-item {
+        width: 27%;
+    }
+    .row .footer-item.left .album-info span {
+        margin-left: 10px;
+    }
+    .row .footer-item.left {
+        justify-content: flex-end;
+        gap: 6px;
+        padding: 5px;
+    }
+    .row .footer-item-center .buttons-cont{
+        gap: 10px;
+    }
+}
+@media screen and (max-width: 480px){
+    .column-spotify{
+        width: calc(100% - 430px);
+        overflow: hidden;
+    }
+    .playlists, .nav-footer, .logo{
+        display: none;
+    }
+    .nav-item{
+        margin-left: 10px;
+    }
+    .nav-item > span{
+        display: none;
+    }
+    .albums-cont{
+        width: calc(100% - 50px);
+    }
+    .ghost-bar{
+        width: 90%;
+    }
+    #nav-albums{
+        width: 90%;
+    }
+    .album-wrap{
+        margin-bottom: 20px;
+    }
+    .row{
+        width: 480px;
+    }
+}
